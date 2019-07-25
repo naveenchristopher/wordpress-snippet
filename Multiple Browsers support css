@@ -1,0 +1,32 @@
+/* Custom css for cross browsers compatibility */
+
+/*Microsoft Edge support css*/
+@supports (-ms-ime-align: auto) {
+    element {
+        // CSS Property
+    }
+}
+
+/*Internet Explorer support css*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    element {
+        // CSS Property
+    }
+}
+
+/* Safari 7.1+ support css*/
+
+_::-webkit-full-page-media, _:future, :root .safari_only {
+    element {
+        // CSS Property
+    }
+}
+
+/*Mozilla only support css*/
+@-moz-document url-prefix() {
+    element {
+        // CSS Property
+    }
+}
+
+/* End Custom css for cross browsers compatibility */
