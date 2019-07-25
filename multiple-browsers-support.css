@@ -29,4 +29,11 @@ _::-webkit-full-page-media, _:future, :root .safari_only {
     }
 }
 
+/*Google Chrome only support css*/
+@media screen and (-webkit-min-device-pixel-ratio:0){
+    element {
+        // CSS Property
+    }
+}
+
 /* End Custom css for cross browsers compatibility */
