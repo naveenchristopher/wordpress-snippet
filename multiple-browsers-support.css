@@ -37,3 +37,12 @@ _::-webkit-full-page-media, _:future, :root .safari_only {
 }
 
 /* End Custom css for cross browsers compatibility */
+
+/* Mobile media queries support css */
+
+/*Safari and ios mobiles support css*/
+@supports (-webkit-overflow-scrolling: touch) {
+  /* CSS specific to iOS devices */ 
+}
+
+/* End Mobile media queries support css */
