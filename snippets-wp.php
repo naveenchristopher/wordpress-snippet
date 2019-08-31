@@ -83,7 +83,8 @@ add_shortcode( 'shortcode_resource', 'shortcode_resource_function' );
 
 <!-- Wordpress Custom fields generator this url-->
 
-<!-- https://metabox.io/online-generator/ -->
+<!-- https://metabox.io/online-generator/   call custom field-->
+<?php get_post_meta(get_the_ID(), 'subtitle', TRUE); ?> 
 
 <!-- ================================================= -->
 
@@ -119,3 +120,22 @@ get_header();
 
 <!-- ================================================= -->
 
+
+// =========================================================================
+// REMOVE WORDPRESS VERSIONING ON URL
+// =========================================================================
+// 
+add_filter( 'style_loader_src',  'sdt_remove_ver_css_js', 9999, 2 );
+add_filter( 'script_loader_src', 'sdt_remove_ver_css_js', 9999, 2 );
+
+function sdt_remove_ver_css_js( $src, $handle ) 
+{
+    $handles_with_version = [ 'style' ]; // <-- Adjust to your needs!
+
+    if ( strpos( $src, 'ver=' ) && ! in_array( $handle, $handles_with_version, true ) )
+        $src = remove_query_arg( 'ver', $src );
+
+    return $src;
+}
+
+<!-- ================================================= -->
